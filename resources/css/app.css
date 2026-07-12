@@ -9,3 +9,158 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* =========================================================
+   Student Management — Color Scheme
+   Deep Navy #10182B / Indigo Ink #1B2A4A / Sky Blue #2E90D8
+   Frost Blue #EFF6FC / Cloud White #F7FAFC / Slate #64748B
+   ========================================================= */
+
+:root{
+    --navy:#10182B;
+    --navy-2:#1B2A4A;
+    --sky:#2E90D8;
+    --sky-hover:#257AB8;
+    --sky-light:#EFF6FC;
+    --cloud:#F7FAFC;
+    --slate:#64748B;
+    --slate-hover:#54627A;
+    --border:#E2E8F0;
+}
+
+body{
+    background-color: var(--cloud);
+    color:#101828;
+    font-family:'Instrument Sans', -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Navbar */
+.navbar.bg-dark{
+    background-color: var(--navy) !important;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+.navbar-brand{
+    font-weight:700;
+    letter-spacing:.2px;
+}
+.navbar-dark .nav-link{
+    color:#C7D2E0 !important;
+    font-size:.92rem;
+    margin-left:6px;
+    transition: color .15s ease;
+}
+.navbar-dark .nav-link:hover{
+    color:#fff !important;
+}
+
+/* Headings */
+h1{
+    font-weight:700;
+    color: var(--navy);
+    font-size:1.6rem;
+}
+
+/* Buttons */
+.btn{
+    border-radius:8px;
+    font-weight:600;
+    font-size:.9rem;
+    padding:.5rem 1rem;
+    transition: all .15s ease;
+}
+
+/* Primary actions: Register, Update, Add Student -> Sky Blue */
+.btn-primary,
+.btn-success{
+    --bs-btn-bg: var(--sky);
+    --bs-btn-border-color: var(--sky);
+    --bs-btn-color:#fff;
+    --bs-btn-hover-bg: var(--sky-hover);
+    --bs-btn-hover-border-color: var(--sky-hover);
+    --bs-btn-hover-color:#fff;
+    --bs-btn-active-bg: var(--sky-hover);
+    --bs-btn-active-border-color: var(--sky-hover);
+}
+
+/* Edit -> outlined Sky Blue (same palette, lighter weight than primary actions) */
+.btn-warning{
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: var(--sky);
+    --bs-btn-color: var(--sky);
+    --bs-btn-hover-bg: var(--sky);
+    --bs-btn-hover-border-color: var(--sky);
+    --bs-btn-hover-color:#fff;
+    --bs-btn-active-bg: var(--sky-hover);
+    --bs-btn-active-border-color: var(--sky-hover);
+    --bs-btn-active-color:#fff;
+}
+
+/* Delete -> solid Slate (destructive, but still within palette) */
+.btn-danger{
+    --bs-btn-bg: var(--slate);
+    --bs-btn-border-color: var(--slate);
+    --bs-btn-color:#fff;
+    --bs-btn-hover-bg: var(--slate-hover);
+    --bs-btn-hover-border-color: var(--slate-hover);
+    --bs-btn-hover-color:#fff;
+    --bs-btn-active-bg: var(--slate-hover);
+    --bs-btn-active-border-color: var(--slate-hover);
+}
+
+.btn-sm{
+    border-radius:6px;
+    font-size:.8rem;
+}
+
+/* Table */
+.table-dark{
+    --bs-table-bg: var(--navy);
+    --bs-table-color:#fff;
+}
+.table-striped > tbody > tr:nth-of-type(odd) > *{
+    --bs-table-accent-bg: var(--sky-light);
+}
+.table{
+    border-radius:10px;
+    overflow:hidden;
+    font-size:.92rem;
+}
+.table-bordered{
+    border-color: var(--border);
+}
+
+/* Card-style surface used to wrap tables / forms / page content */
+.surface-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:1.75rem;
+    box-shadow: 0 1px 2px rgba(16,24,43,0.04);
+}
+
+/* Forms */
+.form-control{
+    border-radius:8px;
+    border-color: var(--border);
+}
+.form-control:focus{
+    border-color: var(--sky);
+    box-shadow: 0 0 0 .2rem rgba(46,144,216,.15);
+}
+.form-label{
+    font-weight:600;
+    font-size:.88rem;
+    color: var(--navy-2);
+}
+
+/* Alerts */
+.alert-success{
+    background-color:#EAF7EE;
+    border-color:#CDEBD6;
+    color:#1E7A3B;
+    border-radius:10px;
+}
+
+.text-muted-slate{
+    color: var(--slate) !important;
+}

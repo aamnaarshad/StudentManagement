@@ -3,6 +3,8 @@
 @section('title', 'Contact')
 
 @section('content')
-    <h1>Contact</h1>
-    <p>Email us at hello@example.com</p>
+    <div class="surface-card">
+        <h1>Contact</h1>
+        <p class="text-muted-slate mb-0">Email us at hello@example.com</p>
+    </div>
 @endsection

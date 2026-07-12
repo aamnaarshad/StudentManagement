@@ -3,6 +3,8 @@
 @section('title', 'Home')
 
 @section('content')
-    <h1>Welcome to {{ $siteName }}</h1>
-    <p>This is the home page.</p>
+    <div class="surface-card">
+        <h1>Welcome to {{ $siteName }}</h1>
+        <p class="text-muted-slate mb-0">This is the home page.</p>
+    </div>
 @endsection

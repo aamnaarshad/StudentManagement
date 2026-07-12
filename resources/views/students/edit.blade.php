@@ -5,7 +5,7 @@
 @section('content')
     <h1 class="mb-4">Edit Student</h1>
 
-    <form method="POST" action="{{ route('students.update', $student) }}" class="col-md-6">
+    <form method="POST" action="{{ route('students.update', $student) }}" class="col-md-6 surface-card">
         @csrf
         @method('PUT')
         <x-text-input name="name" label="Name" :value="$student->name" />
