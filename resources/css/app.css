@@ -82,7 +82,7 @@ h1{
     --bs-btn-active-border-color: var(--sky-hover);
 }
 
-/* Edit -> outlined Sky Blue (same palette, lighter weight than primary actions) */
+/* Edit -> outlined Sky Blue */
 .btn-warning{
     --bs-btn-bg: transparent;
     --bs-btn-border-color: var(--sky);
@@ -95,13 +95,33 @@ h1{
     --bs-btn-active-color:#fff;
 }
 
-/* Delete -> solid Slate (destructive, but still within palette) */
+/* Delete -> solid Slate */
 .btn-danger{
     --bs-btn-bg: var(--slate);
     --bs-btn-border-color: var(--slate);
     --bs-btn-color:#fff;
     --bs-btn-hover-bg: var(--slate-hover);
     --bs-btn-hover-border-color: var(--slate-hover);
+    --bs-btn-hover-color:#fff;
+    --bs-btn-active-bg: var(--slate-hover);
+    --bs-btn-active-border-color: var(--slate-hover);
+}
+
+.btn-outline-primary{
+    --bs-btn-color: var(--sky);
+    --bs-btn-border-color: var(--sky);
+    --bs-btn-hover-bg: var(--sky);
+    --bs-btn-hover-border-color: var(--sky);
+    --bs-btn-hover-color:#fff;
+    --bs-btn-active-bg: var(--sky-hover);
+    --bs-btn-active-border-color: var(--sky-hover);
+}
+
+.btn-outline-secondary{
+    --bs-btn-color: var(--slate);
+    --bs-btn-border-color: var(--border);
+    --bs-btn-hover-bg: var(--slate);
+    --bs-btn-hover-border-color: var(--slate);
     --bs-btn-hover-color:#fff;
     --bs-btn-active-bg: var(--slate-hover);
     --bs-btn-active-border-color: var(--slate-hover);
@@ -163,4 +183,47 @@ h1{
 
 .text-muted-slate{
     color: var(--slate) !important;
+}
+
+/* Course badges */
+.badge-course{
+    display:inline-block;
+    background-color: var(--sky-light);
+    color: var(--navy-2);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:.2rem .55rem;
+    font-size:.78rem;
+    font-weight:600;
+    margin:.1rem .25rem .1rem 0;
+}
+
+/* Student photos */
+.student-avatar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+    display:inline-block;
+}
+
+.student-avatar-placeholder{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background-color: var(--sky-light);
+    color: var(--navy-2);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:.9rem;
+}
+
+.student-avatar-preview{
+    width:88px;
+    height:88px;
+    border-radius:12px;
+    object-fit:cover;
+    border:1px solid var(--border);
 }

@@ -12,10 +12,26 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
         <a class="navbar-brand" href="{{ route('home') }}">Student Management</a>
-        <div>
+        <div class="d-flex align-items-center">
             <a class="nav-link d-inline text-white" href="{{ route('home') }}">Home</a>
-            <a class="nav-link d-inline text-white" href="{{ route('students.index') }}">Students</a>
+            @auth
+                <a class="nav-link d-inline text-white" href="{{ route('students.index') }}">Students</a>
+            @endauth
             <a class="nav-link d-inline text-white" href="{{ route('about') }}">About</a>
+
+            @auth
+                @if (auth()->user()->isAdmin())
+                    <a class="nav-link d-inline text-white" href="{{ route('admin.dashboard') }}">Admin</a>
+                @endif
+                <span class="nav-link d-inline text-white">{{ auth()->user()->name }}</span>
+                <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                    @csrf
+                    <button type="submit" class="btn btn-sm btn-outline-secondary">Logout</button>
+                </form>
+            @else
+                <a class="nav-link d-inline text-white" href="{{ route('login') }}">Login</a>
+                <a class="nav-link d-inline text-white" href="{{ route('register') }}">Register</a>
+            @endauth
         </div>
     </nav>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreStudentRequest extends FormRequest
 {
@@ -13,11 +14,23 @@ class StoreStudentRequest extends FormRequest
 
     public function rules(): array
     {
+        $studentId = $this->route('student')?->id;
+
         return [
-            'name'   => 'required|string|max:255',
-            'email'  => 'required|email|unique:students,email,' . $this->student?->id,
-            'course' => 'required|string|max:255',
-            'age'    => 'required|integer|min:16|max:100',
+            'name' => ['required', 'string', 'max:255'],
+            'email' => [
+                'required',
+                'email',
+                'max:255',
+                Rule::unique('students', 'email')->ignore($studentId),
+            ],
+            'age' => ['required', 'integer', 'min:1', 'max:120'],
+            'photo' => ['nullable', 'image', 'max:2048'],
+
+            'courses' => ['required', 'array', 'min:1'],
+            'courses.*.name' => ['required', 'string', 'max:255'],
+            'courses.*.code' => ['required', 'string', 'max:50'],
+            'courses.*.credit_hours' => ['required', 'integer', 'min:1', 'max:6'],
         ];
     }
 }

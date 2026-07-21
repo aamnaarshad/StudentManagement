@@ -1,0 +1,15 @@
+/* ===== Course code / credit hours addition ===== */
+
+.course-row{
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:.85rem 1rem;
+    background:#FBFDFE;
+}
+
+.form-label.small{
+    font-size:.75rem;
+    color: var(--slate);
+    font-weight:600;
+    margin-bottom:.2rem;
+}
